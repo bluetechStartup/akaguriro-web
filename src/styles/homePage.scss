@@ -1,0 +1,76 @@
+@import "mediaQuery";
+
+.feed{
+    padding: 0 10vw;
+
+    @include mobile-only{
+        padding: 0px;
+    }
+
+    @include tablet-only{
+        padding: 0px 2vw;
+    }
+
+    &__category{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+
+        @include mobile-only{
+            display: none;
+        }
+
+        a{
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 10px 0;
+            transition: .2s all;         
+
+            &:hover{
+                transform: scale(1.07);
+            }
+        }
+    }
+    &__content{
+        margin-left: 17%;
+        width: 80%;
+
+        @include tablet-only{
+            margin-left: 20%;
+        }
+
+        @include mobile-only{
+            margin: 0;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
+
+    .loader{
+        display: flex;
+        justify-content: center;
+
+        @include mobile-only{
+            &>.MuiCircularProgress-root{
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+
+        .MuiCircularProgress-circle{
+            stroke-width: .5;
+        }
+    }
+
+    .error{
+        margin: 5vh auto 0 auto;
+        width: fit-content;
+        border-radius: 10px;
+        padding: 10px 25px;
+        background: rgb(255, 156, 156);
+        text-align: center;
+    }
+}
+
